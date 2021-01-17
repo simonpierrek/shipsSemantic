@@ -8,12 +8,12 @@ library(tidyverse)
 library(geodist)
 library(htmltools)
 
+
 # loading longest distance fonction and dropdown module
 
 dir("modules", full.names = T) %>% walk(source)
 
 #read the data with parallell processing
-
 ships <- data.table::fread("data/ships.csv")
 
 # importing ship icons
@@ -126,18 +126,17 @@ server <- shinyServer(function(input, output) {
             main_panel(
                         cards(
                             class = "two",
-
                              card(
                                  class = "blue label",
                                  div(class =  "content",
-                                     value_box(subtitle = "meters.", value = selected_ship_info()$dist_since_last_obs[1],
-                                                 icon("ship"), width = 12))
+                                     value_box(value = selected_ship_info()$dist_since_last_obs[1],
+                                                      subtitle = "meters."))
                              ),
                             card(class = "blue label",
                                  div(class = "content", h1("The longest distance sailed between two consecutive observations is between", selected_ship_info()$DATETIME[2],
                                                            " and ",
                                                            selected_ship_info()$DATETIME[1], ". "))
-                            )
+                            ),
                             )
                         )
         )
