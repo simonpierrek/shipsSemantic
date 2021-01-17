@@ -1,0 +1,10 @@
+Package: shipsSemantic
+Type: Package
+Title: ship's shiny semantic dashboars
+Version: 0.1.0
+Author: KITEGI simon Pierre
+Maintainer: KITEGI Simon Pierre <simkitegi@gmail.com>
+Description: It allows the user to get much information about the ships and their positions and the longest distance sailed between two consecutive trips
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
